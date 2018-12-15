@@ -41,9 +41,15 @@ html
             div#page-body
 
                 div#page-tab-controls
-                    button Cat 1
-                    button Cat 2
-                    button Cat 3
+                    div.tab-select
+                        input(id=`cat-1`, type="radio", name="tab-select", value=0, checked="checked")
+                        label(for=`cat-1`) Cat 1
+                    div.tab-select
+                        input(id=`cat-2`, type="radio", name="tab-select", value=1)
+                        label(for=`cat-2`) Cat 3
+                    div.tab-select
+                        input(id=`cat-3`, type="radio", name="tab-select", value=2)
+                        label(for=`cat-3`) Cat 3
 
                 div#page-tabs
                     div.page-tab
