@@ -3,12 +3,12 @@
     "private": true,
     "version": "0.0.0",
     "description": "",
-    "main": "./dist/main.js",
-    "types": "./dist/main.d.ts",
+    "main": "",
+    "types": "",
     "scripts": {
-        "clean": "rm -rf ./dist/*;",
+        "clean": "rm -rf ./docs/*;",
         "build": "npm run clean; gulp;",
-        "start": "http-server ./dist/",
+        "start": "http-server ./docs/",
         "deploy": "sh ./scripts/deploy.sh"
     },
     "keywords": [],

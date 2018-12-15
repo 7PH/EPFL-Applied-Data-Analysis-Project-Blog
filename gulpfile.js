@@ -19,15 +19,15 @@ gulp.task("copy-views", () => {
     return gulp.src(pugPaths.pages)
         .pipe(pug())
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('docs/'))
 });
-gulp.task("copy-assets", () => gulp.src(resPaths.pages) .pipe(gulp.dest('dist/assets')));
+gulp.task("copy-assets", () => gulp.src(resPaths.pages) .pipe(gulp.dest('docs/assets')));
 
 gulp.task("copy-scss", function () {
     return gulp.src(scssPaths.pages)
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('docs'));
 });
 
 
@@ -46,7 +46,7 @@ gulp.task("typescript", function () {
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
         .pipe(jsObfuscator())
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest("docs"));
 });
 
 gulp.task('default', gulp.parallel('copy-views', 'copy-scss', 'copy-assets', 'typescript'));
