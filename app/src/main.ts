@@ -1,4 +1,10 @@
 
+const STATIC_HEADER_THRESHOLD: number = 400;
+
+const pageControlsDiv = document.getElementById('page-tab-controls') as HTMLDivElement;
+const staticHeaderDiv = document.getElementById('static-header') as HTMLDivElement;
+const pageBody = document.getElementById('page-body') as HTMLDivElement;
+const pageTabs = document.getElementById('page-tabs') as HTMLDivElement;
 
 const bind = () => {
 
@@ -12,20 +18,28 @@ const bind = () => {
  *
  */
 const showStaticHeader = () => {
+
     staticHeaderVisible = true;
-    (document.getElementById('static-header') as HTMLDivElement)
+
+    staticHeaderDiv
         .classList
         .remove('static-header-hidden');
+
+    staticHeaderDiv.appendChild(pageControlsDiv);
 };
 
 /**
  *
  */
 const hideStaticHeader = () => {
+
     staticHeaderVisible = false;
-    (document.getElementById('static-header') as HTMLDivElement)
+
+    staticHeaderDiv
         .classList
         .add('static-header-hidden');
+
+    pageBody.insertBefore(pageControlsDiv, pageTabs);
 };
 
 /**
@@ -54,9 +68,9 @@ let staticHeaderVisible: boolean = false;
  */
 const onScroll = () => {
 
-    if (window.scrollY > 160 && ! staticHeaderVisible) {
+    if (window.scrollY > STATIC_HEADER_THRESHOLD && ! staticHeaderVisible) {
         showStaticHeader();
-    } else if (window.scrollY < 160 && staticHeaderVisible) {
+    } else if (window.scrollY < STATIC_HEADER_THRESHOLD && staticHeaderVisible) {
         hideStaticHeader();
     }
 };

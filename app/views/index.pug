@@ -6,7 +6,7 @@
             href: 'assets/favicon.jpeg',
             type: 'image/jpeg'
         },
-        pageTitle: "page title"
+        pageTitle: "ADA 2018 - Exploring customer behavior on Amazon"
     }
 
 doctype html
@@ -17,6 +17,7 @@ html
         title= data.pageTitle
         link(rel='icon', href=data.pageFavicon.href, type=data.pageFavicon.type)
 
+        link(href="https://fonts.googleapis.com/css?family=Indie+Flower", rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Zilla+Slab", rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Sacramento", rel="stylesheet")
         link(rel='stylesheet', href='styles.css?' + data.assetsVersion)
@@ -37,8 +38,7 @@ html
 
         div#page-content
 
-            div#page-header
-                br
+            div#page-header.page-bloc
                 h1#page-title Exploring customer behavior on Amazon
                 p
                     | Started 20 years ago, Amazon completely reshaped the online market.
@@ -50,6 +50,8 @@ html
                     | Is a first bad review a red flag for customers?
                 p
                     | In the first steps of our analysis, we explored many aspects of our data, and we thought it is a good idea to work on every category of products separately, since our analysis is mainly textual, every category has its own lexical aspects to conserve, and then compare the overall behavior.
+
+            hr.page-separator
 
             div#page-body
 
@@ -65,13 +67,12 @@ html
                         label(for=`cat-3`) Video games
 
                 div#page-tabs
-                    div#tab-intro.page-tab
-                        p Click on one of the categories above to see its results
                     div#tab-0.page-tab.tab-hidden
                         include tabs/cat1
                     div#tab-1.page-tab.tab-hidden
                         include tabs/cat2
                     div#tab-2.page-tab.tab-hidden
                         include tabs/cat3
+
 
     script(src='bundle.js?' + data.assetsVersion)

@@ -1,5 +1,6 @@
 
 $TEXT_BACKGROUND: #ffffffbb;
+$BACKGROUND_URL: "assets/images/wallpaper/amazon-02.jpg";
 
 html, body {
     height: 100%;
@@ -8,7 +9,7 @@ html, body {
 
 body {
     position: relative;
-    background: url("assets/images/wallpaper/amazon.jpeg") fixed center;
+    background: url($BACKGROUND_URL) fixed center;
 }
 
 #static-header {
@@ -24,7 +25,7 @@ body {
 
     h1 {
         font-size: 124%;
-        font-family: 'Zilla Slab',serif;
+        font-family: 'Indie Flower', cursive;
         margin-top: 12px;
         margin-left: 20px;
         display: inline-block;
@@ -33,6 +34,14 @@ body {
 
     img {
         height: 100%;
+    }
+
+    #page-tab-controls {
+        display: inline-block;
+        width: fit-content;
+        padding-top: 12px;
+        vertical-align: top;
+        margin-left: 20px;
     }
 }
 
@@ -49,18 +58,25 @@ body {
     font-family: 'Zilla Slab', serif;
 }
 
+// page bloc
+.page-bloc {
+    width: calc(100% - 100px);
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+    background-color: $TEXT_BACKGROUND;
+}
+
 // header
 #page-header {
-    width: 100%;
     margin-top: 80px;
     text-align: center;
-    background-color: $TEXT_BACKGROUND;
 
     #page-title {
-        font-size: 350%;
-        font-family: 'Sacramento', serif;
+        font-size: 330%;
+        font-family: 'Indie Flower', cursive;
         margin-bottom: 0;
-        margin-top: 0;
+        margin-top: -20px;
     }
 
     p {
@@ -69,39 +85,57 @@ body {
     }
 }
 
+hr.page-separator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80px;
+}
+
+// page controls
+#page-tab-controls {
+
+    > * {
+        display: inline-block;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+
+    label {
+        border: 1px solid gray;
+        margin: 4px;
+        padding: 2px 8px 2px 8px;
+        cursor: pointer;
+        transition: all .5s;
+        border-radius: 8px;
+        background-color: white;
+    }
+
+    label:hover {
+        background-color: #ddceff;
+    }
+
+    input[type="radio"]:checked + label {
+        background: #684e7b;
+        color: white;
+        font-size: 120%;
+    }
+}
+
 // tabs
 #page-body {
 
     height: 100%;
+    background-color: $TEXT_BACKGROUND;
+    border-radius: 8px;
 
     #page-tab-controls {
         width: 100%;
         height: 38px;
         padding-top: 20px;
         text-align: center;
-        background-color: $TEXT_BACKGROUND;
-
-        > * {
-            display: inline-block;
-        }
-
-        input[type="radio"] {
-            display: none;
-        }
-
-        label {
-            border: 1px solid gray;
-            margin: 4px;
-            padding: 2px 8px 2px 8px;
-            cursor: pointer;
-            transition: all .5s;
-        }
-
-        input[type="radio"]:checked + label {
-            background: #684e7b;
-            color: white;
-            font-size: 120%;
-        }
     }
 
     #page-tabs {
@@ -117,7 +151,8 @@ body {
             opacity: 1;
             transition: all 1s;
             margin-bottom: 40px; // extra scroll
-            background-color: $TEXT_BACKGROUND;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
             padding-left: 50px;
             padding-right: 50px;
             min-height: 1000px;
