@@ -9,6 +9,26 @@ const bind = () => {
 };
 
 /**
+ *
+ */
+const showStaticHeader = () => {
+    staticHeaderVisible = true;
+    (document.getElementById('static-header') as HTMLDivElement)
+        .classList
+        .remove('static-header-hidden');
+};
+
+/**
+ *
+ */
+const hideStaticHeader = () => {
+    staticHeaderVisible = false;
+    (document.getElementById('static-header') as HTMLDivElement)
+        .classList
+        .add('static-header-hidden');
+};
+
+/**
  * Update selected tab
  *
  * @param value
@@ -24,6 +44,23 @@ const updateTab = (value: string) => {
         .remove('tab-hidden');
 };
 
+/**
+ *
+ */
+let staticHeaderVisible: boolean = false;
+
+/**
+ *
+ */
+const onScroll = () => {
+
+    if (window.scrollY > 160 && ! staticHeaderVisible) {
+        showStaticHeader();
+    } else if (window.scrollY < 160 && staticHeaderVisible) {
+        hideStaticHeader();
+    }
+};
+
 
 /**
  *
@@ -35,3 +72,4 @@ const init = () => {
 
 
 window.onload = init;
+window.onscroll = onScroll;

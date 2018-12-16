@@ -5,7 +5,31 @@ html, body {
 }
 
 body {
+    position: relative;
     background-color: #cacaca;
+}
+
+#static-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 8;
+    background-color: #cacaca;
+    border-bottom: 1px solid #a8a8a8;
+    transition: all .2s;
+
+    h1 {
+        font-size: 124%;
+        font-family: 'Zilla Slab',serif;
+        margin-top: 12px;
+        margin-left: 20px;
+    }
+}
+
+#static-header.static-header-hidden {
+    opacity: 0;
 }
 
 // page content
@@ -74,9 +98,12 @@ body {
             top: 0;
             left: 0;
             width: 100%;
-            height: calc(100% - 10px);
             opacity: 1;
             transition: all 1s;
+            margin-bottom: 40px; // extra scroll
+
+            // @TODO
+            min-height: 1000px;
         }
         .tab-hidden {
             opacity: 0;
