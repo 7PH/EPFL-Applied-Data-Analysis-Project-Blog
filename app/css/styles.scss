@@ -114,11 +114,11 @@ hr.page-separator {
     }
 
     label:hover {
-        background-color: #ddceff;
+        background-color: #daffc6;
     }
 
     input[type="radio"]:checked + label {
-        background: #684e7b;
+        background: #3c8a0b;
         color: white;
         font-size: 120%;
     }
@@ -176,25 +176,21 @@ hr.page-separator {
 }
 
 .item-template0 {
-
     > .item-element {
         display: inline-block;
         height: 100%;
         vertical-align: top;
-
         img {
             max-width: 100%;
             max-height: 100%;
         }
     }
-
-
     > .item-image {
         width: 398px;
     }
     > .item-text {
         width: calc(100% - 420px);
-        padding: 10px;
+        padding: 60px 10px 10px;
     }
 }
 
@@ -222,11 +218,9 @@ hr.page-separator {
 }
 
 .item-template2 {
-
     > .item-text {
         width: 100%;
     }
-
     > .item-image {
         margin-top: 6px;
         width: 100%;
@@ -245,3 +239,23 @@ hr.page-separator {
     }
 }
 
+.item-0 {height: 280px}
+.item-1 {height: 400px}
+.item-2 {height: 100px}
+.item-3 {height: 485px}
+.item-4 {height: 485px}
+.item-5 {height: 60px}
+.item-6 {height: 505px}
+.item-7 {height: 280px}
+.item-8 {height: 60px}
+.item-9 {height: 500px}
+.item-10 {height: 20px}
+.item-11 {height: 250px; margin-top: 0;}
+
+.links a {
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 30px;
+    color: #32668e;
+    font-size: 120%;
+}
