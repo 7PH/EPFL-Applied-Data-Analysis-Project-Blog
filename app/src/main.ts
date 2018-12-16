@@ -68,6 +68,8 @@ const onScroll = () => {
 const init = () => {
 
     bind();
+
+    updateTab('0');
 };
 
 

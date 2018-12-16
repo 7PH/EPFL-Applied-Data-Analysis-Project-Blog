@@ -38,6 +38,7 @@ var onScroll = function () {
 };
 var init = function () {
     bind();
+    updateTab('0');
 };
 window.onload = init;
 window.onscroll = onScroll;

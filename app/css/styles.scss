@@ -1,4 +1,6 @@
 
+$TEXT_BACKGROUND: #ffffff88;
+
 html, body {
     height: 100%;
     margin: 0;
@@ -6,7 +8,7 @@ html, body {
 
 body {
     position: relative;
-    background-color: #cacaca;
+    background: url("assets/images/wallpaper/amazon.jpeg") fixed center;
 }
 
 #static-header {
@@ -16,7 +18,7 @@ body {
     width: 100%;
     height: 40px;
     z-index: 8;
-    background-color: #cacaca;
+    background-color: white;
     border-bottom: 1px solid #a8a8a8;
     transition: all .2s;
 
@@ -25,6 +27,12 @@ body {
         font-family: 'Zilla Slab',serif;
         margin-top: 12px;
         margin-left: 20px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    img {
+        height: 100%;
     }
 }
 
@@ -35,7 +43,7 @@ body {
 // page content
 #page-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     height: 100%;
     margin: 0 auto;
     font-family: 'Zilla Slab', serif;
@@ -44,8 +52,9 @@ body {
 // header
 #page-header {
     width: 100%;
-    height: 150px;
+    margin-top: 80px;
     text-align: center;
+    background-color: $TEXT_BACKGROUND;
 
     #page-title {
         font-size: 350%;
@@ -53,17 +62,24 @@ body {
         margin-bottom: 0;
         margin-top: 0;
     }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
 }
 
 // tabs
 #page-body {
 
-    height: calc(100% - 150px);
+    height: 100%;
 
     #page-tab-controls {
         width: 100%;
         height: 38px;
+        padding-top: 20px;
         text-align: center;
+        background-color: $TEXT_BACKGROUND;
 
         > * {
             display: inline-block;
@@ -91,22 +107,106 @@ body {
     #page-tabs {
 
         position: relative;
-        height: calc(100% - 38px);
+        height: 100%;
 
         .page-tab {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: calc(100% - 100px);
             opacity: 1;
             transition: all 1s;
             margin-bottom: 40px; // extra scroll
-
-            // @TODO
+            background-color: $TEXT_BACKGROUND;
+            padding-left: 50px;
+            padding-right: 50px;
             min-height: 1000px;
+            padding-bottom: 20px;
         }
         .tab-hidden {
             opacity: 0;
         }
     }
 }
+
+.item {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 40px;
+    display: block;
+
+    > .item-element {
+        text-align: center;
+    }
+}
+
+.item-template0 {
+
+    > .item-element {
+        display: inline-block;
+        height: 100%;
+        vertical-align: top;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+
+    > .item-image {
+        width: 398px;
+    }
+    > .item-text {
+        width: calc(100% - 420px);
+        padding: 10px;
+    }
+}
+
+
+
+.item-template1 {
+    position: relative;
+    > .item-text {
+        position: absolute;
+        top: 60px;
+        right: 90px;
+        width: 370px;
+        background-color: #ffffff6b;
+        padding: 18px;
+        border-radius: 20px;
+    }
+    > .item-image {
+        width: 100%;
+        height: 100%;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+.item-template2 {
+
+    > .item-text {
+        width: 100%;
+    }
+
+    > .item-image {
+        margin-top: 6px;
+        width: 100%;
+        img {
+            max-width: 50%;
+            max-height: 100%;
+        }
+    }
+}
+
+
+.item-template3 {
+    min-height: 0;
+    > .item-text {
+        width: 100%;
+    }
+}
+

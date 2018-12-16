@@ -32,6 +32,7 @@ html
     body
 
         div#static-header.static-header-hidden
+            img(src="assets/images/ada-logo.png")
             h1 ADA 2018
 
         div#page-content
@@ -39,29 +40,38 @@ html
             div#page-header
                 br
                 h1#page-title Exploring customer behavior on Amazon
-                p Title and global description
+                p
+                    | Started 20 years ago, Amazon completely reshaped the online market.
+                    | Amazon has more than half a billion different products within very diversified categories (book, kitchen equipment, jewelry..).
+                    | This growth had an impact on how people sell and buy on the platform.
+                    | Because there are so many products, we might think that customer reviews have a crucial importance on the choices customer make before buying a product.
+                p
+                    | Because customer reviews are a form of social interaction within the online marketplace, we aim to find out in what way customer reviews are relevant, and what is their overall influence on the product success.
+                    | Is a first bad review a red flag for customers?
+                p
+                    | In the first steps of our analysis, we explored many aspects of our data, and we thought it is a good idea to work on every category of products separately, since our analysis is mainly textual, every category has its own lexical aspects to conserve, and then compare the overall behavior.
 
             div#page-body
 
                 div#page-tab-controls
                     div.tab-select
-                        input.tab-select-radio(id=`cat-1`, type="radio", name="tab-select", value=0)
-                        label(for=`cat-1`) Cat 1
+                        input.tab-select-radio(id=`cat-1`, type="radio", name="tab-select", value=0, checked="checked")
+                        label(for=`cat-1`) Pets supplies
                     div.tab-select
                         input.tab-select-radio(id=`cat-2`, type="radio", name="tab-select", value=1)
-                        label(for=`cat-2`) Cat 3
+                        label(for=`cat-2`) Home & kitchen
                     div.tab-select
                         input.tab-select-radio(id=`cat-3`, type="radio", name="tab-select", value=2)
-                        label(for=`cat-3`) Cat 3
+                        label(for=`cat-3`) Video games
 
                 div#page-tabs
                     div#tab-intro.page-tab
                         p Click on one of the categories above to see its results
-                    div#tab-0.page-tab.tab-hidden(style="background-color:red")
+                    div#tab-0.page-tab.tab-hidden
                         include tabs/cat1
-                    div#tab-1.page-tab.tab-hidden(style="background-color:blue")
+                    div#tab-1.page-tab.tab-hidden
                         include tabs/cat2
-                    div#tab-2.page-tab.tab-hidden(style="background-color:green")
+                    div#tab-2.page-tab.tab-hidden
                         include tabs/cat3
 
     script(src='bundle.js?' + data.assetsVersion)
