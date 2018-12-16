@@ -17,8 +17,8 @@ html
         title= data.pageTitle
         link(rel='icon', href=data.pageFavicon.href, type=data.pageFavicon.type)
 
-        link(href='https://fonts.googleapis.com/css?family=Sacramento', rel='stylesheet')
-        link(href='https://fonts.googleapis.com/css?family=Kalam', rel='stylesheet')
+        link(href="https://fonts.googleapis.com/css?family=Zilla+Slab", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Sacramento", rel="stylesheet")
         link(rel='stylesheet', href='styles.css?' + data.assetsVersion)
 
         script(src='https://use.fontawesome.com/0cebcc1cf0.js')
@@ -35,7 +35,8 @@ html
         div#page-content
 
             div#page-header
-                h1 Applied data analysis / Amazon
+                h1#page-title
+                    | Exploring customer behavior on Amazon
                 p Title and global description
 
             div#page-body
