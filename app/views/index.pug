@@ -35,15 +35,15 @@ html
         div#page-content
 
             div#page-header
-                h1#page-title
-                    | Exploring customer behavior on Amazon
+                br
+                h1#page-title Exploring customer behavior on Amazon
                 p Title and global description
 
             div#page-body
 
                 div#page-tab-controls
                     div.tab-select
-                        input.tab-select-radio(id=`cat-1`, type="radio", name="tab-select", value=0, checked="checked")
+                        input.tab-select-radio(id=`cat-1`, type="radio", name="tab-select", value=0)
                         label(for=`cat-1`) Cat 1
                     div.tab-select
                         input.tab-select-radio(id=`cat-2`, type="radio", name="tab-select", value=1)
@@ -53,11 +53,13 @@ html
                         label(for=`cat-3`) Cat 3
 
                 div#page-tabs
-                    div#tab-0.page-tab
+                    div#tab-intro.page-tab
+                        p Click on one of the categories above to see its results
+                    div#tab-0.page-tab.tab-hidden(style="background-color:red")
                         include tabs/cat1
-                    div#tab-1.page-tab.tab-hidden
+                    div#tab-1.page-tab.tab-hidden(style="background-color:blue")
                         include tabs/cat2
-                    div#tab-2.page-tab.tab-hidden
+                    div#tab-2.page-tab.tab-hidden(style="background-color:green")
                         include tabs/cat3
 
     script(src='bundle.js?' + data.assetsVersion)
